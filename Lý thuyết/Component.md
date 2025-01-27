@@ -19,18 +19,30 @@
 </style>
 ```
 
-# ref
-
+# ref với DOM trong template
 Cách dùng giống useRef của reactjs, nói đúng thơn giống e trong `function(e)` khi gán vào sự kiện vậy
+
+nếu đang dùng setup thì sẽ không dùng được
 
 ví dụ:
 
 ```vue
-<input ref="name">
-```
+<template>
+  <!-- ref -->
+  <input ref="name"/> 
+  <button @click="handleClick"> click</button>
+</template>
 
-trong js dùng thì
-
-```js
-this.$refs.name
+<script>
+export default {
+  name: 'Test',
+  methods: {
+    handleClick()
+    {
+      <!-- ref -->
+      console.log(this.$refs.name.value)
+    }
+  }
+}
+</script>
 ```

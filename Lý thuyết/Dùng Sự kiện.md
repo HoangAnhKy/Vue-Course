@@ -1,8 +1,10 @@
-# Menuenu
+# Menu
 
 - [click](#click)
 - [if-else](#if---else)
 - [for](#for)
+- [html-raw](#html-thuần)
+- [attribute binding](#attribute-binding)
 - [mouse](#sự-kiện-chuột)
 ---
 
@@ -80,6 +82,21 @@ có thể dùng javscript để checkcheck
 ```
 
 ---
+
+## HTML thuần
+
+Sử dụng html thuần
+
+```vue
+<script setup>
+  const html_raw = "<h2>HTML Row</h2>";
+</script>
+
+<template>
+  <span v-html="html_raw"></span>
+</template>
+```
+***
 
 ## for
 
@@ -168,7 +185,18 @@ Có 2 cách dùng:
 ví dụ dùng `v-bind` làm dynamic class
 
 ```html
-  <a v-bind:href="url" :class="{active: isActive}">vue</a> 
-
+  <a v-bind:href="url" :class="{active: isActive}">vue</a>
 <!-- nếu code bên vue isActive là true nó sẽ hiện class không nó sẽ hiện class rỗng -->
+<!--
+const objectOfAttrs = {
+  id: 'container',
+  class: 'wrapper',
+  style: 'background-color:green'
+}
+
+nếu đem obj này đi binding <div v-bind="objectOfAttrs"></div> thì div này sẽ có tất cả thuộc tính trong obj
+
+hoặc dùng với attribute động
+<a :[attributeName]="url"> ... </a>
+-->
 ```
