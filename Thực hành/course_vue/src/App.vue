@@ -1,21 +1,27 @@
 <script setup>
-import {computed, ref} from "vue";
-    const count = ref(0)
+import { ref, computed } from 'vue'
 
-    function increase() {
-        count.value++;
+const firstName = ref('John')
+const lastName = ref('Doe')
+
+const fullName = computed({
+    // getter
+    get() {
+        return firstName.value + ' ' + lastName.value
+    },
+    // setter
+    set(newValue) {
+        [firstName.value, lastName.value] = newValue.split(' ')
     }
+})
 
-    const checkNumber = computed( () =>  {
-        console.log("cache")
-        return count.value <= 2 ? "count <= 2" : "count > 2"
-    })
+const setName = () => {
+    fullName.value = "kdev dzai"
+}
 </script>
 
 <template>
-    <h1 ref="elementRef">{{ count }}</h1>
-    <h1>{{ checkNumber }}</h1>
-    <h3></h3>
+    <h1>{{ fullName }}: {{firstName}} - {{lastName}}</h1>
 
-    <button @click="increase">+ </button>
+    <button @click="setName">change name</button>
 </template>
