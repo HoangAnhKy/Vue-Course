@@ -3,7 +3,7 @@
 - [click](#click)
 - [if-else](#if---else)
 - [for](#for)
-
+- [mouse](#sự-kiện-chuột)
 ---
 
 ## click
@@ -110,4 +110,65 @@ out put
 2 - Banana
 3 - Cherry
 -->
+```
+
+***
+
+## Sự kiện chuột
+
+Có 6 sực kiện:
+
+- `mousemove`:
+  - Thực hiện: Kích hoạt liên tục khi chuột di chuyển qua phần tử.
+  - Ứng dụng: Theo dõi vị trí chuột hoặc tạo hiệu ứng hoạt họa dựa trên tọa độ chuột
+- `mouseout` và `mouseleave` : 
+  - Thực hiện: Khi chuột rời khỏi phần tử hiện tại.
+  - Ứng dụng: Dùng khi muốn xử lý việc rời chuột khỏi một vùng lớn
+  - Điểm khác nhau của `out` và `leave`:
+    + `mouseout`: kích hoạt khi rời khỏi phần tử hoặc đi vào phần tử con.
+    + `mouseleave`: Không kích hoạt lại nếu chuột rời khỏi phần tử con, chỉ kích hoạt một lần khi rời phần tử cha.
+- `mouseover` và `mouseenter`:
+  - Thực hiện: Chuột đi vào phần tử
+  - Ứng dụng: Dùng khi muốn xử lý việc di chuột vào một vùng lớn
+  - Điểm khác nhau của `over` và `enter`:
+    + `mouseover`: Kích hoạt lại khi chuột đi vào các phần tử con.
+    + `mouseleave`: Không kích hoạt lại khi chuột di vào phần tử con.
+
+Ví dụ:
+```vue
+<!-- ex2: mouse -->
+    <div class="box" v-on:mouseover="handleEvent('over')">
+        <div style="border: 1px solid red; margin-top: 10px;">Child</div>
+    </div>
+    <div class="box" v-on:mouseenter="handleEvent('enter')">
+        <div style="border: 1px solid red; margin-top: 10px;">Child</div>
+    </div>
+
+    <div class="box" v-on:mouseout="handleEvent('out')">out</div>
+    <div class="box" v-on:mouseleave="handleEvent('leave')">leave</div>
+
+    <div class="box" v-on:mousedown="handleEvent('down')">down</div>
+    <div class="box" v-on:mouseup="handleEvent('up')">up</div>
+
+    <div class="box" v-on:mousemove="handleEvent('move')" >
+      Di chuyển chuột ở đây!
+      <p>X: {{ x }}, Y: {{ y }}</p>
+    </div>
+```
+***
+
+## attribute binding
+
+Các attribute của html không dùng được các biến định sẵn bên vue nên phải dùng bind.
+
+Có 2 cách dùng: 
+ - `v-bind`: `<a v-bind:href="url">vue</a>`
+ - `:attribute`: `<a :href="url">vue</a>`
+
+ví dụ dùng `v-bind` làm dynamic class
+
+```html
+  <a v-bind:href="url" :class="{active: isActive}">vue</a> 
+
+<!-- nếu code bên vue isActive là true nó sẽ hiện class không nó sẽ hiện class rỗng -->
 ```

@@ -42,3 +42,32 @@ const app = Vue.createApp({
 
 app.mount("#root");
 ```
+
+# computed properties
+- Giống `getAttribute` trong laravel
+- Computed property chỉ tính toán lại khi dữ liệu phụ thuộc của nó thay đổi, giúp tối ưu hiệu suất.
+- Computed property tự động theo dõi các thay đổi trong các thuộc tính mà nó phụ thuộc. Nên là phải khai báo nó trước
+
+```vue
+<div id="app">
+  <p>Full Name: {{ fullName }}</p>
+</div>
+
+<script>
+const app = Vue.createApp({
+  data() {
+    return {
+      firstName: 'John',
+      lastName: 'Doe'
+    };
+  },
+  computed: {
+    fullName() {
+      return `${this.firstName} ${this.lastName}`;
+    }
+  }
+});
+app.mount('#app');
+</script>
+
+```
