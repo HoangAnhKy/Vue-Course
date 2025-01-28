@@ -1,7 +1,7 @@
 # Menu
 
 - [click](#click)
-- [if-else](#if---else)
+- [if-else](#if-show)
 - [for](#for)
 - [html-raw](#html-thuần)
 - [attribute binding](#attribute-binding)
@@ -53,8 +53,9 @@ app.mount("#root");
 
 ---
 
-## if - else
+## if-show
 
+### if-else if-else
 Dùng để set điều kiện `v-if` và `v-else`, có cả `v-else-if`
 
 ```html
@@ -79,6 +80,31 @@ có thể dùng javscript để checkcheck
 
 ```html
 {{ ok ? 'YES' : 'NO' }}
+```
+
+### show
+
+Dùng để thay đổi trạng thái `css` của nó giống trong modal `show` hoặc `hidden` của `jquery` vậy.  
+
+```vue
+
+<script setup>
+  import {ref, computed} from 'vue'
+
+  const isActive = ref(false)
+
+  const changeActive = () => {
+    isActive.value = !isActive.value
+  }
+
+</script>
+
+<template>
+  <button :style="styleState">active</button>
+<!-- nó sẽ được khai báo style, true thì style trống fail thì display:none-->
+  <h1 v-show="isActive">show</h1> 
+</template>
+
 ```
 
 ---

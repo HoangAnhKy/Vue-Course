@@ -4,6 +4,11 @@ import {ref, computed} from 'vue'
 const firstName = ref('John')
 const lastName = ref('Doe')
 const isActive = ref(false)
+const styleState = ref({
+    background: "red",
+    color: "white",
+    padding: "20px"
+})
 
 const fullName = computed({
     // getter
@@ -31,13 +36,18 @@ const changeActive = () => {
         <!-- bài set và get computed -->
         <h1>{{ fullName }}: {{ firstName }} - {{ lastName }}</h1>
 
-        <button @click="setName">change name</button>
+        <button @click="setName">change set Computed</button>
     </div>
 
     <div>
         <h1>Bind Class</h1>
         <button :class="['button', {active: isActive}]" @click="changeActive">active</button>
+
+        <h3>bind style</h3>
+        <button :style="styleState">active</button>
     </div>
+
+    <h1 v-show="isActive">show</h1>
 </template>
 
 <style>
