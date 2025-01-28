@@ -185,8 +185,31 @@ Có 2 cách dùng:
 ví dụ dùng `v-bind` làm dynamic class
 
 ```html
-  <a v-bind:href="url" :class="{active: isActive}">vue</a>
+<div>
+    <h1>Bind Class</h1>
+    <button :class="['button', {active: isActive}]" @click="changeActive">active</button>
+</div>
+<style>
+  .button{
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    &:hover{
+      background: rgba(255, 0, 0, 0.73);
+    }
+  }
+
+  .active {
+    background: green;
+    &:hover{
+      background: lightgreen;
+    }
+  }
+</style>
 <!-- nếu code bên vue isActive là true nó sẽ hiện class không nó sẽ hiện class rỗng -->
+
+
 <!--
 const objectOfAttrs = {
   id: 'container',

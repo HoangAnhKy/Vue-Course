@@ -1,8 +1,9 @@
 <script setup>
-import { ref, computed } from 'vue'
+import {ref, computed} from 'vue'
 
 const firstName = ref('John')
 const lastName = ref('Doe')
+const isActive = ref(false)
 
 const fullName = computed({
     // getter
@@ -18,10 +19,42 @@ const fullName = computed({
 const setName = () => {
     fullName.value = "kdev dzai"
 }
+
+const changeActive = () => {
+    isActive.value = !isActive.value
+}
 </script>
 
 <template>
-    <h1>{{ fullName }}: {{firstName}} - {{lastName}}</h1>
 
-    <button @click="setName">change name</button>
+    <div>
+        <!-- bài set và get computed -->
+        <h1>{{ fullName }}: {{ firstName }} - {{ lastName }}</h1>
+
+        <button @click="setName">change name</button>
+    </div>
+
+    <div>
+        <h1>Bind Class</h1>
+        <button :class="['button', {active: isActive}]" @click="changeActive">active</button>
+    </div>
 </template>
+
+<style>
+.button{
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    &:hover{
+        background: rgba(255, 0, 0, 0.73);
+    }
+}
+
+.active {
+    background: green;
+    &:hover{
+        background: lightgreen;
+    }
+}
+</style>
