@@ -124,6 +124,23 @@ Sử dụng html thuần
 ```
 ***
 
+## v-modal
+
+: Tạo liên kết dữ liệu hai chiều giữa dữ liệu Vue và các thành phần nhập liệu như input, textarea, select.
+
+```vue
+<script setup>
+let bind_B = ref("");
+</script>
+
+<template>
+    <label>{{ bind_A }}</label> <br />
+    <input v-model="bind_B">
+</template>
+
+```
+
+***
 ## for
 
 Cú pháp cơ bản
