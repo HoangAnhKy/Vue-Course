@@ -1,70 +1,57 @@
-<script setup>
-import {ref, computed} from 'vue'
-
-const firstName = ref('John')
-const lastName = ref('Doe')
-const isActive = ref(false)
-const styleState = ref({
-    background: "red",
-    color: "white",
-    padding: "20px"
-})
-
-const fullName = computed({
-    // getter
-    get() {
-        return firstName.value + ' ' + lastName.value
-    },
-    // setter
-    set(newValue) {
-        [firstName.value, lastName.value] = newValue.split(' ')
-    }
-})
-
-const setName = () => {
-    fullName.value = "kdev dzai"
-}
-
-const changeActive = () => {
-    isActive.value = !isActive.value
-}
-</script>
-
 <template>
-
-    <div>
-        <!-- bài set và get computed -->
-        <h1>{{ fullName }}: {{ firstName }} - {{ lastName }}</h1>
-
-        <button @click="setName">change set Computed</button>
+    <div class="container mt-2">
+        <h1>ToDo List</h1>
+        <div class="mt-3 input-group w-25">
+            <input class="form-control" ref="nameTodo" value="" :data-index="edit"/>
+                <button class="btn btn-success" @click="handleAction">{{edit ? "save" : "create"}}</button>
+        </div>
+        <table class="table table-striped mt-5">
+            <colgroup>
+                <col style="width: 25%">
+            </colgroup>
+            <tr>
+                <th>Name ToDo</th>
+                <th></th>
+            </tr>
+            <tr v-for="(todo, index) in listToDo" :key="index">
+                <td>{{ todo }}</td>
+                <td>
+                    <button @click="getIdEdit(index)">Edit</button>
+                </td>
+            </tr>
+        </table>
     </div>
-
-    <div>
-        <h1>Bind Class</h1>
-        <button :class="['button', {active: isActive}]" @click="changeActive">active</button>
-
-        <h3>bind style</h3>
-        <button :style="styleState">active</button>
-    </div>
-
-    <h1 v-show="isActive">show</h1>
 </template>
+<script setup>
 
-<style>
-.button{
-    background: red;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    &:hover{
-        background: rgba(255, 0, 0, 0.73);
-    }
+import {computed, ref} from "vue";
+
+const nameTodo = ref(null);
+const edit = ref(null);
+const listToDo = ref(["laravel", "Reactjs", "Livewire"]);
+
+const resetForm = () => {
+    const element = nameTodo.value;
+    edit.value = null;
+    element.value = null;
+    element.focus()
 }
 
-.active {
-    background: green;
-    &:hover{
-        background: lightgreen;
-    }
+const saveListToDo = () => {
+    const element = nameTodo.value;
+    listToDo.value.push(element.value)
+    resetForm();
 }
-</style>
+const getIdEdit = (index) =>{
+    nameTodo.value.value = listToDo.value[index];
+    edit.value = index
+}
+const editTodo = () => {
+    listToDo.value[edit.value] = nameTodo.value.value
+    resetForm();
+}
+
+const handleAction = computed(() => {
+    return edit.value !== null ? editTodo() : saveListToDo();
+})
+</script>
