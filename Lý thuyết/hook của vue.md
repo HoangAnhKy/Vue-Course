@@ -1,10 +1,14 @@
-# Composition API
+## Composition API
 
+**Ref**
 - [ref](#ref)
 - [reactive](#reactive)
 - [nexttick](#nexttick)
+
+**onMounted và onUnmounted**
+
 ***
-# ref
+## ref
 
 Mục đích: Dùng khi muốn tạo một biến đơn giản để lưu trữ dữ liệu trạng thái và muốn Vue tự động cập nhật giao diện khi biến này thay đổi
 
@@ -104,7 +108,7 @@ export default {
 
 ***
 
-# reactive
+## reactive
 
 Khi trong `ref` là một object hoặc array thì nên dùng `reactive`,để bỏ bớt `.value`
 
@@ -139,7 +143,7 @@ Khi trong `ref` là một object hoặc array thì nên dùng `reactive`,để b
 
 *** 
 
-# nextTick
+## nextTick
 
 Dùng để đồng bộ dom ngay sau khi xử lý 
 
@@ -164,3 +168,29 @@ Dùng để đồng bộ dom ngay sau khi xử lý
 </template>
 
 ```
+
+# `onMounted` và `onUnmounted` 
+
+dùng giống với `mounted` và `beforeUnmount` trong `Options API`
+## `onMounted`
+
+**Cách dùng**
+- Được dùng ngay sau khi component đã được mount.
+- Thích hợp để thực hiện các thao tác khởi tạo, gọi API, hoặc tương tác với DOM khi đã sẵn sàng.
+
+## `onUnmounted`
+
+**Cách dùng**
+
+- Được dùng ngay trước khi component bị gỡ bỏ 
+- Thường dùng để dọn dẹp (clean up) các subscription, event listener, hoặc hủy (abort) yêu cầu HTTP đang chờ, v.v.
+
+# `onBeforeMount` và `onBeforeUnmount`
+
+- `onBeforeMount`: Dùng để chạy trước khi dữ liệu được `onMounted` vào
+- `onBeforeUnmount`: Dùng để chạy trước khi dữ liệu bị `onUnmounted` ra
+
+# `onUpdated` và `onBeforeUpdate` 
+
+- `onBeforeUpdate`: Được gọi trước khi component (hoặc Virtual DOM) thực hiện cập nhật (re-render) do có thay đổi về dữ liệu (state, props, computed, v.v.).
+- `onUpdated`: Được gọi sau khi component hoàn tất cập nhật lại DOM (re-render).
