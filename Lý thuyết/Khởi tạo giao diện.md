@@ -133,3 +133,69 @@ const setName = () => {
 </template>
 
 ```
+
+# Watch
+`Watch` trong Vue (còn được gọi là “quan sát” các thay đổi dữ liệu) là một cơ chế cho phép thực thi một đoạn logic tùy chỉnh khi dữ liệu (hoặc giá trị tính toán) thay đổi.
+
+## Cú pháp 
+
+```js
+import {watch} from 'vue'
+
+watch(src, (newVal, oldVal) => (
+// src chứa các giá trị thay đổi giống bên useEffect nhưng mà nó sẽ không bắt obj.value 
+// chúng thay sẽ thay nó bằng getter (callback)
+    
+// trong callback này là một đoạn code logice gì đó sử dụng dữ liệu cũ và mới
+))
+```
+
+Ví dụ
+```vue
+<script setup>
+  import { ref, watch } from 'vue'
+
+  const count = ref(0)
+
+  // Theo dõi thay đổi của 'count'
+  watch(count, (newVal, oldVal) => {
+    console.log(`count thay đổi: ${oldVal} => ${newVal}`)
+  })
+</script>
+
+<template>
+  <div>
+    <p>Count: {{ count }}</p>
+    <button @click="count++">Tăng count</button>
+  </div>
+</template>
+```
+
+## Theo dõi sâu (deep và immediate)
+
+- `deep`: để theo dõi toàn bộ thay đổi bên trong object. `watch(obj, callback, { deep: true })`, `false` chỉ dùng được ở lớp ngoài
+- `immediate`: dùng để gọi `callback (newVal, oldVal) => {...}` ngay lập tức khi component mount
+
+# watchEffect 
+
+là một hàm (API) giúp dễ dàng tạo ra các side effect (tác vụ phụ) dựa trên các biến phản ứng (reactive data) mà không cần chỉ rõ biến nào để theo dõi. Vue sẽ tự động thu thập tất cả biến phản ứng để sử dụng trong hàm callback và chạy lại callback bất cứ khi nào những biến đó thay đổi
+
+nó chỉ có `newValue` không có `old value`. Và nó chạy ngay khi component được mount
+```vue
+import { ref, watchEffect } from 'vue'
+
+export default {
+  setup() {
+    const count = ref(0)
+
+    watchEffect(() => {
+      // Bất cứ biến (ref/reactive) nào được sử dụng ở đây,
+      // khi thay đổi thì hàm callback này sẽ tự động chạy lại.
+      console.log(`Giá trị count là: ${count.value}`)
+    })
+
+    return { count }
+  }
+}
+
+```

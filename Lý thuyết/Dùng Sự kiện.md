@@ -246,7 +246,7 @@ Có 6 sực kiện:
     - Ứng dụng: Dùng khi muốn xử lý việc di chuột vào một vùng lớn
     - Điểm khác nhau của `over` và `enter`:
         + `mouseover`: Kích hoạt lại khi chuột đi vào các phần tử con.
-        + `mouseleave`: Không kích hoạt lại khi chuột di vào phần tử con.
+        + `mouseenter`: Không kích hoạt lại khi chuột di vào phần tử con.
 
 Ví dụ:
 
