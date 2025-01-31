@@ -3,8 +3,8 @@ import { createApp } from 'vue'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import Course from "@/Course.vue";
+import WatchDemo from "@/WatchDemo.vue";
 
-const app = createApp(Course)
+const app = createApp(WatchDemo)
 
 app.mount('#app')

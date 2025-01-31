@@ -178,7 +178,7 @@ Ví dụ
 
 # watchEffect 
 
-là một hàm (API) giúp dễ dàng tạo ra các side effect (tác vụ phụ) dựa trên các biến phản ứng (reactive data) mà không cần chỉ rõ biến nào để theo dõi. Vue sẽ tự động thu thập tất cả biến phản ứng để sử dụng trong hàm callback và chạy lại callback bất cứ khi nào những biến đó thay đổi
+là một hàm (API) giúp dễ dàng tạo ra các side effect (tác vụ phụ) dựa trên các biến phản ứng (reactive data) mà không cần chỉ rõ biến nào để theo dõi. Vue sẽ tự động thu thập tất cả biến phản ứng để sử dụng `trong hàm callback` và chạy lại callback bất cứ khi nào những biến đó thay đổi
 
 nó chỉ có `newValue` không có `old value`. Và nó chạy ngay khi component được mount
 ```vue
