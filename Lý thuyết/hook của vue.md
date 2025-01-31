@@ -14,6 +14,9 @@ Mục đích: Dùng khi muốn tạo một biến đơn giản để lưu trữ 
 
 Khá là giống `useState` trong reactjs trong cách lưu và thay đổi dữ liệu. Khác cách khai báo thôi
 
+
+nếu `ref` dùng trong `attribute` thì nó sẽ hoạt động với `DOM`
+
 ### Cách dùng
 
 ```vue
@@ -106,6 +109,42 @@ export default {
 </script>
 ```
 
+#### Dùng với v-for
+
+```vue
+<script setup>
+import {onMounted, ref} from "vue";
+
+const listRef = ref(["laravel", "reactjs", "vue", "livewire"])
+const listRefChildren = ref([]);
+
+onMounted(() => {
+    console.log(listRefChildren.value)
+})
+
+</script>
+
+<template>
+    <div class="container">
+        <h1> refs </h1>
+        <hr/>
+
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th></th>
+            </tr>
+            <tr v-for="(value, index) in listRef" :key="index" ref="listRefChildren">
+                <td>{{ value }}</td>
+                <td>
+                    <button class="btn btn-primary"> edit </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</template>
+
+```
 ***
 
 ## reactive
