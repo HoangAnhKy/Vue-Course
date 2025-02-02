@@ -1,5 +1,4 @@
 <script setup>
-import {ref} from "vue";
 
 const { count } = defineProps({
     count: {
@@ -9,7 +8,7 @@ const { count } = defineProps({
 });
 //
 const emit = defineEmits(["increase"])
-const callbackIncrease = () => emit("increase");
+const callbackIncrease = () => emit("increase", 5);
 
 const email = defineModel("email");
 </script>

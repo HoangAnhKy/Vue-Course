@@ -67,6 +67,7 @@ Ví dụ:
 
   const emit = defineEmits(["increase"])
   const callbackIncrease = () => emit("increase"); // c2
+  // const callbackIncrease = () => emit("increase", 5);
 </script>
 
 <template>
