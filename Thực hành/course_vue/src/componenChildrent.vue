@@ -1,6 +1,6 @@
 <script setup>
 
-const { count } = defineProps({
+const {count} = defineProps({
     count: {
         type: Number,
         default: -1
@@ -10,7 +10,16 @@ const { count } = defineProps({
 const emit = defineEmits(["increase"])
 const callbackIncrease = () => emit("increase", 5);
 
-const email = defineModel("email");
+const [email, modifier] = defineModel("email", {
+    type: String,
+    set(value) {
+        if (modifier.capitolize) {
+            value = value[0].toUpperCase() + value.substring(1)
+        }
+        return value;
+    }
+});
+console.log(modifier) // {capitolize: true}
 </script>
 
 <template>

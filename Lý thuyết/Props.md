@@ -80,8 +80,23 @@ Ví dụ:
 
 # v-model component
 
-Dùng modal như bình thường nhưng chỉ cần thêm ``
-
+- Dùng modal như bình thường nhưng chỉ cần thêm `defineModel` ở phần tử nhận dữ liệu.
+- Dùng `modifier customer`, ngoài các `modifier` cơ bản như là lazy, trim, number chúng ta có thể define thêm như sau:
+  + `v-model:key.modifier`: v-model:email.capitolize, nó sẽ biến `defineModel` thành mảng ` [ref, modifier]`
+  + muốn chỉnh gì đó ta chỉ việc chỉnh theo `object` `set(value)` của nó.
+    
+      ```js
+      const [email, modifier] = defineModel("email", {
+          type: String,
+          set(value) {
+          if (modifier.capitolize) {
+              value = value[0].toUpperCase() + value.substring(1)
+          }
+          return value;
+          }
+      });
+      ``` 
+ví dụ
 ```vue
 // parent
 <script setup>
@@ -114,5 +129,4 @@ const email = defineModel("email"); // đối vơí trường hợp có một th
         </div>
     </form>
 </template>
-
 ```
