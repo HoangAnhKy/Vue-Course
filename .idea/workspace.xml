@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a63f1907-8847-4836-a3b9-82815df87fde" name="Changes" comment="component slot">
+      <change beforePath="$PROJECT_DIR$/Thực hành/course_vue/src/Props.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Thực hành/course_vue/src/Props.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thực hành/course_vue/src/componenChildrent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Thực hành/course_vue/src/componenChildrent.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EditorConfigPreviewManager">
+    <editorConfig file="$PROJECT_DIR$/Thực hành/course_vue/.editorconfig" previewFile="$PROJECT_DIR$/Thực hành/course_vue/src/App.vue" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2sCHwjzmIOgO7BfanWx3nEnYbZE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/DNTU/chuyen_nganh/Vue-Course&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a63f1907-8847-4836-a3b9-82815df87fde" name="Changes" comment="" />
+      <created>1737952877931</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737952877931</updated>
+      <workItem from="1737952878880" duration="9585000" />
+      <workItem from="1737969980622" duration="10229000" />
+      <workItem from="1737998592008" duration="4955000" />
+      <workItem from="1738073895887" duration="8862000" />
+      <workItem from="1738117804459" duration="16480000" />
+      <workItem from="1738153162628" duration="6037000" />
+      <workItem from="1738162588972" duration="7530000" />
+      <workItem from="1738254921759" duration="5348000" />
+      <workItem from="1738290665890" duration="2874000" />
+      <workItem from="1738317697639" duration="3403000" />
+      <workItem from="1738340976822" duration="6580000" />
+      <workItem from="1738399350060" duration="5642000" />
+      <workItem from="1738426567877" duration="1178000" />
+      <workItem from="1738480487155" duration="6418000" />
+      <workItem from="1738515161504" duration="6930000" />
+      <workItem from="1738555330548" duration="6144000" />
+    </task>
+    <task id="LOCAL-00001" summary="update computed">
+      <option name="closed" value="true" />
+      <created>1738003049278</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1738003049279</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update computed">
+      <option name="closed" value="true" />
+      <created>1738003548574</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738003548574</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update binding class">
+      <option name="closed" value="true" />
+      <created>1738088627551</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738088627551</updated>
+    </task>
+    <task id="LOCAL-00004" summary="event">
+      <option name="closed" value="true" />
+      <created>1738155283141</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738155283141</updated>
+    </task>
+    <task id="LOCAL-00005" summary="v modal">
+      <option name="closed" value="true" />
+      <created>1738159107768</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1738159107768</updated>
+    </task>
+    <task id="LOCAL-00006" summary="v modal">
+      <option name="closed" value="true" />
+      <created>1738159118532</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1738159118532</updated>
+    </task>
+    <task id="LOCAL-00007" summary="v modal modifier">
+      <option name="closed" value="true" />
+      <created>1738174248210</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1738174248210</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add new hooks onMounted onUnMounted onBeforeMount onBeforeUnmount onUpdatedon BeforeUpdate">
+      <option name="closed" value="true" />
+      <created>1738177066016</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1738177066016</updated>
+    </task>
+    <task id="LOCAL-00009" summary="watch và watchEffect">
+      <option name="closed" value="true" />
+      <created>1738263032042</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1738263032042</updated>
+    </task>
+    <task id="LOCAL-00010" summary="watch và watchEffect">
+      <option name="closed" value="true" />
+      <created>1738344275859</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1738344275860</updated>
+    </task>
+    <task id="LOCAL-00011" summary="watch và watchEffect">
+      <option name="closed" value="true" />
+      <created>1738349797939</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1738349797939</updated>
+    </task>
+    <task id="LOCAL-00012" summary="props">
+      <option name="closed" value="true" />
+      <created>1738491222677</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1738491222677</updated>
+    </task>
+    <task id="LOCAL-00013" summary="component">
+      <option name="closed" value="true" />
+      <created>1738520437845</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1738520437845</updated>
+    </task>
+    <task id="LOCAL-00014" summary="component props">
+      <option name="closed" value="true" />
+      <created>1738520813974</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1738520813974</updated>
+    </task>
+    <task id="LOCAL-00015" summary="component props">
+      <option name="closed" value="true" />
+      <created>1738522213186</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1738522213186</updated>
+    </task>
+    <task id="LOCAL-00016" summary="component slot">
+      <option name="closed" value="true" />
+      <created>1738561963944</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1738561963944</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update computed" />
+    <MESSAGE value="update binding class" />
+    <MESSAGE value="event" />
+    <MESSAGE value="v modal" />
+    <MESSAGE value="v modal modifier" />
+    <MESSAGE value="add new hooks onMounted, onUnMounted, onBeforeMount, onBeforeUnmount, onUpdated, onBeforeUpdate" />
+    <MESSAGE value="add new hooks onMounted onUnMounted onBeforeMount onBeforeUnmount onUpdatedon BeforeUpdate" />
+    <MESSAGE value="watch và watchEffect" />
+    <MESSAGE value="props" />
+    <MESSAGE value="component" />
+    <MESSAGE value="component props" />
+    <MESSAGE value="component slot" />
+    <option name="LAST_COMMIT_MESSAGE" value="component slot" />
+  </component>
+</project>

@@ -33,4 +33,6 @@ console.log(modifier) // {capitolize: true}
             <input v-model="email">
         </div>
     </form>
+    <slot>dev test slot</slot>
+    <slot name="button">button</slot>
 </template>

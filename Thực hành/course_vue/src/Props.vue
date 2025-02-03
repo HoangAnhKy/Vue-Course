@@ -17,11 +17,15 @@ const change = () => email.value = "change"
     <Childrent
         :count="count"
         @increase="handleBtn"
-        v-model:email.capitolize ="email"/>
+        v-model:email.capitolize ="email">
+        slot parent
+        <template v-slot:button>
+            <button @click="change">changeEmail parent</button>
+        </template>
+    </Childrent>
     <!--Childrent
         Props
         event
         model:key.modifier
     -->
-    <button @click="change">changeEmail parent</button>
 </template>
