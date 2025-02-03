@@ -68,3 +68,49 @@ export default {
 }
 </script>
 ```
+# slot 
+
+`slot` sẽ nhận giá trị ở trong `component` truyền bao nhiêu qua thì bên `slot` trong `thẻ con` nhận bấy nhiêu.
+- nếu không để gì thì nó hiện trống hoặc hện giá trị default `<slot> default <slot>`
+- Muốn truyền nhiều thằng khác nhau qua thì đặt tên thêm cho nó `<slot name="">` ở phần con và `<template #name>` ở phần cha
+
+    ```vue
+        // childrent
+        <template>
+            <slot name="slot1"></slot>
+            <slot name="slot2"></slot>
+        </template>
+  
+        // vue parent
+  
+        <template>
+            <childrent>
+                <template #slot1>slot1</template>
+                <template #slot2>slot2</template>
+            </childrent>
+        </template>
+    ```
+
+ví dụ cơ bản:
+```vue
+// parent
+<script setup>
+import FancyButton from './FancyButton.vue'
+</script>
+
+<template>
+  <FancyButton>
+    Click me
+ 	</FancyButton>
+</template>
+```
+
+```vue
+// childrent
+<template>
+  <button class="fancy-btn">
+  	<slot/>
+	</button>
+</template>
+
+```
