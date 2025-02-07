@@ -1,8 +1,7 @@
 <template>
-  <div class="container">
-    <todoApp />
-  </div>
+  <RouterView />
+  <Navbar/>
 </template>
 <script setup>
-import TodoApp from "@/components/TodoApp.vue";
+import Navbar from "@/View/Navbar.vue";
 </script>
