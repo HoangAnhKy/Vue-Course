@@ -1,9 +1,11 @@
 # cài đặt
+
 ```shell
 npm install vue-router@4
 ```
 
 # cách dùng
+
 **B1: tạo component**
 
 ```vue
@@ -18,24 +20,30 @@ npm install vue-router@4
 
 **B2: khởi tạo route**
 
-với: 
+với:
+
 - `createWebHistory`: Tạo một “history mode” sử dụng HTML5 History API (URL đẹp, không có #).
-- `createRouter`:  Khởi tạo một đối tượng router, định tuyến tuyến đường
+- `createRouter`: Khởi tạo một đối tượng router, định tuyến tuyến đường
 - Sử dùng `lazyload` => `() => import("@/View/Home.vue")`
 - nếu dùng `name` trong route thì bên `RouterLink` gọi sẽ là `<RouterLink :to={name:'tên', params:{tên params}}>`
 - có thể truyền cả `props` và `defineProps` sài không khác gì `props trong component`: khai báo `props: true`
-```js
 
-import {createRouter, createWebHistory} from "vue-router";
+```js
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
-    { path: "/", component: () => import("@/View/Home.vue")},
-    { path: "/contact/:id?", component: () => import("@/View/Contact.vue"), name: "contact", props: true},
-    {
-        path: "/:pathMatch(.*)*", // dùng phù hợp với mọi path, muốn quay lại thì $router.back() với view
-        component: () => import("@/View/Notfound.vue")
-    }
-/*
+  { path: "/", component: () => import("@/View/Home.vue") },
+  {
+    path: "/contact/:id?",
+    component: () => import("@/View/Contact.vue"),
+    name: "contact",
+    props: true,
+  },
+  {
+    path: "/:pathMatch(.*)*", // dùng phù hợp với mọi path, muốn quay lại thì $router.back() với view
+    component: () => import("@/View/Notfound.vue"),
+  },
+  /*
 truyền id nếu cần, phần tử trong component muốn truy cập thì dùng
 nếu nó dùng ở template
     <h1>Contact {{ $route.params}}</h1>
@@ -44,28 +52,28 @@ còn ở script thì dùng
     const route = useRoute(); // lấy được path,hash, query các kiểu nếu consolog nó ra xem
     CẨN THẬN useRoute với useRouter
 */
-]
+];
 
 export const route = createRouter({
   history: createWebHistory(),
   routes,
 
-    // Đổi tên class mặc định
-    linkActiveClass: 'nav-link-active',        // Thay cho router-link-active
-    linkExactActiveClass: 'nav-link-exact'     // Thay cho router-link-exact-active (nếu muốn)
-})
+  // Đổi tên class mặc định
+  linkActiveClass: "nav-link-active", // Thay cho router-link-active
+  linkExactActiveClass: "nav-link-exact", // Thay cho router-link-exact-active (nếu muốn)
+});
 ```
 
 **B3: khai báo route và sử dụng bên vue**
 
 ```js
 // main.js
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
 
-import {route} from "./View/Route.js";
+import { route } from "./View/Route.js";
 
-createApp(App).use(route).mount('#app')
+createApp(App).use(route).mount("#app");
 ```
 
 **B4: Dùng `outlet`(`<RouterView />`) trong file cần ví dụ dùng ở `App.vue`**
@@ -77,7 +85,9 @@ createApp(App).use(route).mount('#app')
 ```
 
 # Khởi tạo nav
- sử dụng `RouterLink`
+
+sử dụng `RouterLink`
+
 ```vue
 <template>
   <ul>
@@ -89,6 +99,58 @@ createApp(App).use(route).mount('#app')
     </li>
   </ul>
 </template>
-<script setup>
-</script>
+<script setup></script>
 ```
+
+# Muốn dùng nhiều layout
+
+- Thêm thẻ meta chỉ định Layout
+
+  ```js
+  import { createRouter, createWebHistory } from "vue-router";
+  import IndexFull from "./components/IndexFull.vue";
+  import Index from "./components/Index.vue";
+
+  const routes = [
+    {
+      path: "/",
+      component: () => import("./components/Ideas/Ideas.vue"),
+      meta: { layout: Index },
+    },
+    {
+      path: "/Login",
+      component: () => import("./components/User/Login.vue"),
+      meta: { layout: IndexFull },
+    },
+  ];
+
+  export const route = createRouter({
+    history: createWebHistory(),
+    routes,
+    linkActiveClass: "nav-link-active",
+    linkExactActiveClass: "nav-link-exact",
+  });
+  ```
+
+- Chỉnh sửa `App.vue`
+
+  ```vue
+  // App.vue
+  <template>
+    <component :is="layout">
+      <RouterView />
+    </component>
+  </template>
+
+  <script setup>
+  import { computed } from "vue";
+  import { useRoute } from "vue-router";
+  import Index from "./Index.vue";
+
+  const route = useRoute();
+
+  const layout = computed(() => {
+    return route.meta.layout || Index; // Mặc định là Index nếu không có layout được chỉ định
+  });
+  </script>
+  ```
