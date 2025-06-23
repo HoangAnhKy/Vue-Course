@@ -1,4 +1,4 @@
-Lấy token và thêm trực tiếp luôn ko phải đợi reload lại trang mới có
+# Lấy token và thêm trực tiếp luôn ko phải đợi reload lại trang mới có
 
 ```js
 const getCookie = (name) => {
@@ -17,7 +17,7 @@ request.interceptors.request.use((config) => {
 });
 ```
 
-Lưu cookie bên BE 
+# Lưu cookie bên BE 
 
 ```php
     // Lưu
@@ -43,3 +43,20 @@ Lưu cookie bên BE
     ->cookie("sys_token", '', -1, '/', env("APP_DOMAIN"), false, false)
     ->withCookie($cookie);
 ```
+
+# khai báo jquery trong vue
+```js
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="{{ asset("vue-3.js") }}"></script>
+// phải khai báo jquery trước vue
+<script>
+    const app = Vue.createApp({
+
+    })
+    app.config.globalProperties.$jquery = $;
+    app.mount("#root");
+</script>
+```
+# dùng props của lớp con
+
+khai báo thêm `ref` ở `component` 
