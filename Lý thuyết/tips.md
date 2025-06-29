@@ -57,6 +57,37 @@ request.interceptors.request.use((config) => {
     app.mount("#root");
 </script>
 ```
+
 # dùng props của lớp con
 
 khai báo thêm `ref` ở `component` 
+
+# v-cloak
+
+Khi Vue khởi động:
+- Vue render xong thì tự động gỡ bỏ v-cloak khỏi element.
+- Khi đó, nội dung hiển thị ra như bình thường.
+
+Ví dụ:
+
+```html
+<style>
+  [v-cloak] {
+    display: none;
+  }
+</style>
+
+<div id="app" v-cloak>
+  {{ message }}
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      message: 'Vue đã load xong!'
+    }
+  });
+</script>
+
+```
